@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D05DC962161F4031007AC7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DC961161F4031007AC7D2 /* UIKit.framework */; };
+		D05DC964161F4031007AC7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DC963161F4031007AC7D2 /* Foundation.framework */; };
+		D05DC966161F4031007AC7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DC965161F4031007AC7D2 /* CoreGraphics.framework */; };
+		D05DC96C161F4031007AC7D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D05DC96A161F4031007AC7D2 /* InfoPlist.strings */; };
+		D05DC96E161F4031007AC7D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC96D161F4031007AC7D2 /* main.m */; };
+		D05DC972161F4031007AC7D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC971161F4031007AC7D2 /* AppDelegate.m */; };
+		D05DC974161F4031007AC7D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D05DC973161F4031007AC7D2 /* Default.png */; };
+		D05DC976161F4031007AC7D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D05DC975161F4031007AC7D2 /* Default@2x.png */; };
+		D05DC978161F4031007AC7D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D05DC977161F4031007AC7D2 /* Default-568h@2x.png */; };
+		D05DC97B161F4031007AC7D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC97A161F4031007AC7D2 /* ViewController.m */; };
+		D05DC97E161F4031007AC7D2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05DC97C161F4031007AC7D2 /* ViewController.xib */; };
+		D05DC987161F406A007AC7D2 /* YTFToggler.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC986161F406A007AC7D2 /* YTFToggler.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D05DC95D161F4031007AC7D2 /* YTFToggler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTFToggler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D05DC961161F4031007AC7D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D05DC963161F4031007AC7D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D05DC965161F4031007AC7D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D05DC969161F4031007AC7D2 /* YTFToggler-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YTFToggler-Info.plist"; sourceTree = "<group>"; };
+		D05DC96B161F4031007AC7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D05DC96D161F4031007AC7D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D05DC96F161F4031007AC7D2 /* YTFToggler-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTFToggler-Prefix.pch"; sourceTree = "<group>"; };
+		D05DC970161F4031007AC7D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D05DC971161F4031007AC7D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D05DC973161F4031007AC7D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D05DC975161F4031007AC7D2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D05DC977161F4031007AC7D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D05DC979161F4031007AC7D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D05DC97A161F4031007AC7D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D05DC97D161F4031007AC7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		D05DC985161F406A007AC7D2 /* YTFToggler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTFToggler.h; sourceTree = "<group>"; };
+		D05DC986161F406A007AC7D2 /* YTFToggler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTFToggler.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D05DC95A161F4031007AC7D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D05DC962161F4031007AC7D2 /* UIKit.framework in Frameworks */,
+				D05DC964161F4031007AC7D2 /* Foundation.framework in Frameworks */,
+				D05DC966161F4031007AC7D2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D05DC952161F4031007AC7D2 = {
+			isa = PBXGroup;
+			children = (
+				D05DC967161F4031007AC7D2 /* YTFToggler */,
+				D05DC960161F4031007AC7D2 /* Frameworks */,
+				D05DC95E161F4031007AC7D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D05DC95E161F4031007AC7D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D05DC95D161F4031007AC7D2 /* YTFToggler.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D05DC960161F4031007AC7D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D05DC961161F4031007AC7D2 /* UIKit.framework */,
+				D05DC963161F4031007AC7D2 /* Foundation.framework */,
+				D05DC965161F4031007AC7D2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D05DC967161F4031007AC7D2 /* YTFToggler */ = {
+			isa = PBXGroup;
+			children = (
+				D05DC984161F406A007AC7D2 /* YTFToggler */,
+				D05DC970161F4031007AC7D2 /* AppDelegate.h */,
+				D05DC971161F4031007AC7D2 /* AppDelegate.m */,
+				D05DC979161F4031007AC7D2 /* ViewController.h */,
+				D05DC97A161F4031007AC7D2 /* ViewController.m */,
+				D05DC97C161F4031007AC7D2 /* ViewController.xib */,
+				D05DC968161F4031007AC7D2 /* Supporting Files */,
+			);
+			path = YTFToggler;
+			sourceTree = "<group>";
+		};
+		D05DC968161F4031007AC7D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D05DC969161F4031007AC7D2 /* YTFToggler-Info.plist */,
+				D05DC96A161F4031007AC7D2 /* InfoPlist.strings */,
+				D05DC96D161F4031007AC7D2 /* main.m */,
+				D05DC96F161F4031007AC7D2 /* YTFToggler-Prefix.pch */,
+				D05DC973161F4031007AC7D2 /* Default.png */,
+				D05DC975161F4031007AC7D2 /* Default@2x.png */,
+				D05DC977161F4031007AC7D2 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D05DC984161F406A007AC7D2 /* YTFToggler */ = {
+			isa = PBXGroup;
+			children = (
+				D05DC985161F406A007AC7D2 /* YTFToggler.h */,
+				D05DC986161F406A007AC7D2 /* YTFToggler.m */,
+			);
+			path = YTFToggler;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D05DC95C161F4031007AC7D2 /* YTFToggler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D05DC981161F4031007AC7D2 /* Build configuration list for PBXNativeTarget "YTFToggler" */;
+			buildPhases = (
+				D05DC959161F4031007AC7D2 /* Sources */,
+				D05DC95A161F4031007AC7D2 /* Frameworks */,
+				D05DC95B161F4031007AC7D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YTFToggler;
+			productName = YTFToggler;
+			productReference = D05DC95D161F4031007AC7D2 /* YTFToggler.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D05DC954161F4031007AC7D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = yeti;
+			};
+			buildConfigurationList = D05DC957161F4031007AC7D2 /* Build configuration list for PBXProject "YTFToggler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D05DC952161F4031007AC7D2;
+			productRefGroup = D05DC95E161F4031007AC7D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D05DC95C161F4031007AC7D2 /* YTFToggler */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D05DC95B161F4031007AC7D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D05DC96C161F4031007AC7D2 /* InfoPlist.strings in Resources */,
+				D05DC974161F4031007AC7D2 /* Default.png in Resources */,
+				D05DC976161F4031007AC7D2 /* Default@2x.png in Resources */,
+				D05DC978161F4031007AC7D2 /* Default-568h@2x.png in Resources */,
+				D05DC97E161F4031007AC7D2 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D05DC959161F4031007AC7D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D05DC96E161F4031007AC7D2 /* main.m in Sources */,
+				D05DC972161F4031007AC7D2 /* AppDelegate.m in Sources */,
+				D05DC97B161F4031007AC7D2 /* ViewController.m in Sources */,
+				D05DC987161F406A007AC7D2 /* YTFToggler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D05DC96A161F4031007AC7D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D05DC96B161F4031007AC7D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D05DC97C161F4031007AC7D2 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D05DC97D161F4031007AC7D2 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D05DC97F161F4031007AC7D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D05DC980161F4031007AC7D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D05DC982161F4031007AC7D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YTFToggler/YTFToggler-Prefix.pch";
+				INFOPLIST_FILE = "YTFToggler/YTFToggler-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D05DC983161F4031007AC7D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YTFToggler/YTFToggler-Prefix.pch";
+				INFOPLIST_FILE = "YTFToggler/YTFToggler-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D05DC957161F4031007AC7D2 /* Build configuration list for PBXProject "YTFToggler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D05DC97F161F4031007AC7D2 /* Debug */,
+				D05DC980161F4031007AC7D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D05DC981161F4031007AC7D2 /* Build configuration list for PBXNativeTarget "YTFToggler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D05DC982161F4031007AC7D2 /* Debug */,
+				D05DC983161F4031007AC7D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D05DC954161F4031007AC7D2 /* Project object */;
+}
