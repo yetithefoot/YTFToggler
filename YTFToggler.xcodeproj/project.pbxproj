@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D05DC962161F4031007AC7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DC961161F4031007AC7D2 /* UIKit.framework */; };
 		D05DC964161F4031007AC7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DC963161F4031007AC7D2 /* Foundation.framework */; };
-		D05DC966161F4031007AC7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DC965161F4031007AC7D2 /* CoreGraphics.framework */; };
 		D05DC96C161F4031007AC7D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D05DC96A161F4031007AC7D2 /* InfoPlist.strings */; };
 		D05DC96E161F4031007AC7D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC96D161F4031007AC7D2 /* main.m */; };
 		D05DC972161F4031007AC7D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC971161F4031007AC7D2 /* AppDelegate.m */; };
@@ -19,13 +18,13 @@
 		D05DC97B161F4031007AC7D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC97A161F4031007AC7D2 /* ViewController.m */; };
 		D05DC97E161F4031007AC7D2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05DC97C161F4031007AC7D2 /* ViewController.xib */; };
 		D05DC987161F406A007AC7D2 /* YTFToggler.m in Sources */ = {isa = PBXBuildFile; fileRef = D05DC986161F406A007AC7D2 /* YTFToggler.m */; };
+		D05DC989161F43C4007AC7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DC988161F43C4007AC7D2 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D05DC95D161F4031007AC7D2 /* YTFToggler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTFToggler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05DC961161F4031007AC7D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D05DC963161F4031007AC7D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D05DC965161F4031007AC7D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D05DC969161F4031007AC7D2 /* YTFToggler-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YTFToggler-Info.plist"; sourceTree = "<group>"; };
 		D05DC96B161F4031007AC7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D05DC96D161F4031007AC7D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		D05DC97D161F4031007AC7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		D05DC985161F406A007AC7D2 /* YTFToggler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTFToggler.h; sourceTree = "<group>"; };
 		D05DC986161F406A007AC7D2 /* YTFToggler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTFToggler.m; sourceTree = "<group>"; };
+		D05DC988161F43C4007AC7D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05DC989161F43C4007AC7D2 /* CoreGraphics.framework in Frameworks */,
 				D05DC962161F4031007AC7D2 /* UIKit.framework in Frameworks */,
 				D05DC964161F4031007AC7D2 /* Foundation.framework in Frameworks */,
-				D05DC966161F4031007AC7D2 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +76,9 @@
 		D05DC960161F4031007AC7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D05DC988161F43C4007AC7D2 /* CoreGraphics.framework */,
 				D05DC961161F4031007AC7D2 /* UIKit.framework */,
 				D05DC963161F4031007AC7D2 /* Foundation.framework */,
-				D05DC965161F4031007AC7D2 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
