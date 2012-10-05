@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/yetithefoot/YTFToggler'
   s.authors  = {'YetiTheFoot' => 'reg.yeti@gmail.com'}
   s.source   = { :git => 'https://github.com/yetithefoot/YTFToggler.git', :tag => '0.1'}
-  s.source_files = 'YTFToggler'
+  s.source_files = 'YTFToggler/YTFToggler'
   s.requires_arc = false
 
   s.framework = 'UIKit', 'Foundation', 'CoreGraphics'
