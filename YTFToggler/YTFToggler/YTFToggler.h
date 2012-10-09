@@ -33,14 +33,16 @@ enum TogglerState {
 
 
 @interface YTFToggler : UIViewController{
-    CGRect _contentViewRect;
+    CGRect _originalContentViewRect;
 }
+
 
 @property(retain, nonatomic) UIButton * gripButton;
 @property (retain, nonatomic) UIView * contentView;
 @property (retain, nonatomic) NSString * text;
 @property (assign, nonatomic) int position;
 @property (assign, nonatomic) id<YTFTogglerDelegate> delegate;
+@property (readonly) CGRect originalRect;
 
 
 -(void) open;

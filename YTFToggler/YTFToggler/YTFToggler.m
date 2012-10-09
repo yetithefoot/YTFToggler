@@ -24,7 +24,7 @@
         // Initialization code
         
         self.contentView = aView;
-        _contentViewRect = aView.frame;
+        _originalContentViewRect = aView.frame;
         self.position = position;
         self.text = text;
         
@@ -124,16 +124,19 @@
 }
 
 
+-(CGRect)originalRect{
+    return _originalContentViewRect;
+}
 
 -(void)open{
     
     // relocate contentview  frame
     CGRect frame = self.contentView.frame;
     switch (self.position) {
-        case TogglerPositionLeft: frame.size.width += _contentViewRect.size.width; break;
-        case TogglerPositionRight: frame.size.width += _contentViewRect.size.width; break;
-        case TogglerPositionBottom: frame.size.height += _contentViewRect.size.height; break;
-        case TogglerPositionTop: frame.size.height += _contentViewRect.size.height; break;
+        case TogglerPositionLeft: frame.size.width += _originalContentViewRect.size.width; break;
+        case TogglerPositionRight: frame.size.width += _originalContentViewRect.size.width; break;
+        case TogglerPositionBottom: frame.size.height += _originalContentViewRect.size.height; break;
+        case TogglerPositionTop: frame.size.height += _originalContentViewRect.size.height; break;
     }
     self.contentView.frame = frame;
     
@@ -142,10 +145,10 @@
     // relocate toggler frame
     frame = self.gripButton.frame;
     switch (self.position) {
-        case TogglerPositionLeft: frame.origin.x -= _contentViewRect.size.width; break;
-        case TogglerPositionRight: frame.origin.x += _contentViewRect.size.width; break;
-        case TogglerPositionBottom: frame.origin.y += _contentViewRect.size.height; break;
-        case TogglerPositionTop: frame.origin.y -= _contentViewRect.size.height; break;
+        case TogglerPositionLeft: frame.origin.x -= _originalContentViewRect.size.width; break;
+        case TogglerPositionRight: frame.origin.x += _originalContentViewRect.size.width; break;
+        case TogglerPositionBottom: frame.origin.y += _originalContentViewRect.size.height; break;
+        case TogglerPositionTop: frame.origin.y -= _originalContentViewRect.size.height; break;
     }
     self.gripButton.frame = frame;
     
@@ -172,10 +175,10 @@
     // relocate toggler frame
     frame = self.gripButton.frame;
     switch (self.position) {
-        case TogglerPositionLeft: frame.origin.x += _contentViewRect.size.width; break;
-        case TogglerPositionRight: frame.origin.x -= _contentViewRect.size.width; break;
-        case TogglerPositionBottom: frame.origin.y -= _contentViewRect.size.height; break;
-        case TogglerPositionTop: frame.origin.y += _contentViewRect.size.height; break;
+        case TogglerPositionLeft: frame.origin.x += _originalContentViewRect.size.width; break;
+        case TogglerPositionRight: frame.origin.x -= _originalContentViewRect.size.width; break;
+        case TogglerPositionBottom: frame.origin.y -= _originalContentViewRect.size.height; break;
+        case TogglerPositionTop: frame.origin.y += _originalContentViewRect.size.height; break;
     }
     self.gripButton.frame = frame;
     
