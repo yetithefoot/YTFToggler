@@ -34,6 +34,7 @@ enum TogglerState {
 
 @interface YTFToggler : UIViewController{
     CGRect _originalContentViewRect;
+    CGSize _size; // width - long, height - short
 }
 
 
@@ -53,5 +54,6 @@ enum TogglerState {
 -(void) hide;
 
 - (id)initWithView:(UIView *) aView andPosition:(int)position andText:(NSString *)text;
+- (id)initWithView:(UIView *) aView andPosition:(int)position andText:(NSString *)text andSize:(CGSize) aSize;
 
 @end

@@ -36,7 +36,7 @@
     _toggler1 = [[YTFToggler alloc] initWithView:self.view1 andPosition:TogglerPositionBottom andText:@"Bottom"];
     _toggler2 = [[YTFToggler alloc] initWithView:self.view2 andPosition:TogglerPositionLeft andText:@"Left"];
     _toggler3 = [[YTFToggler alloc] initWithView:self.view3 andPosition:TogglerPositionRight andText:@"Right"];
-    _toggler4 = [[YTFToggler alloc] initWithView:self.view4 andPosition:TogglerPositionTop andText:@"Top"];
+    _toggler4 = [[YTFToggler alloc] initWithView:self.view4 andPosition:TogglerPositionTop andText:@"Top" andSize:CGSizeMake(100, 30)];
     _toggler4.delegate = self;
     
 }

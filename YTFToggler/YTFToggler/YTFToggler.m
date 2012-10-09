@@ -19,6 +19,11 @@
 
 - (id)initWithView:(UIView *) aView andPosition:(int)position andText:(NSString *)text
 {
+    return [self initWithView:aView andPosition:position andText:text andSize:CGSizeMake(80, 24)];
+}
+
+- (id)initWithView:(UIView *) aView andPosition:(int)position andText:(NSString *)text andSize:(CGSize) aSize
+{
     self = [super init];
     if (self) {
         // Initialization code
@@ -27,6 +32,7 @@
         _originalContentViewRect = aView.frame;
         self.position = position;
         self.text = text;
+        _size = aSize;
         
         
         [self customInit];
@@ -34,12 +40,6 @@
     return self;
 }
 
-
-
-
-
-#define BTN_SHORT 20
-#define BTN_LONG 80
 
 - (void)customInit
 {
@@ -50,10 +50,10 @@
     
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
-        rect.origin.x = self.contentView.frame.origin.x - BTN_LONG/2 - BTN_SHORT/2 +1;
-        rect.size.width = BTN_LONG;
-        rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height/2 - BTN_SHORT/2;
-        rect.size.height = BTN_SHORT;
+        rect.origin.x = self.contentView.frame.origin.x - _size.width/2 - _size.height/2 +1;
+        rect.size.width = _size.width;
+        rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height/2 - _size.height/2;
+        rect.size.height = _size.height;
         
         // create button
         self.gripButton = [[UIButton alloc]initWithFrame:rect];
@@ -64,10 +64,10 @@
         
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
-        rect.origin.x = self.contentView.frame.size.width - BTN_LONG/2 + BTN_SHORT/2 -1;
-        rect.size.width = BTN_LONG;
-        rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height/2 - BTN_SHORT/2;
-        rect.size.height = BTN_SHORT;
+        rect.origin.x = self.contentView.frame.size.width - _size.width/2 + _size.height/2 -1;
+        rect.size.width = _size.width;
+        rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height/2 - _size.height/2;
+        rect.size.height = _size.height;
         
         // create button
         self.gripButton = [[UIButton alloc]initWithFrame:rect];
@@ -78,10 +78,10 @@
         
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
-        rect.origin.x = self.contentView.frame.origin.x + (self.contentView.frame.size.width - BTN_LONG)/2;
-        rect.size.width = BTN_LONG;
+        rect.origin.x = self.contentView.frame.origin.x + (self.contentView.frame.size.width - _size.width)/2;
+        rect.size.width = _size.width;
         rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height-1;
-        rect.size.height = BTN_SHORT;
+        rect.size.height = _size.height;
         
         // create button
         self.gripButton = [[UIButton alloc]initWithFrame:rect];
@@ -90,10 +90,10 @@
         
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
-        rect.origin.x = self.contentView.frame.origin.x + (self.contentView.frame.size.width - BTN_LONG)/2;
-        rect.size.width = BTN_LONG;
-        rect.origin.y = self.contentView.frame.origin.y - BTN_SHORT +1;
-        rect.size.height = BTN_SHORT;
+        rect.origin.x = self.contentView.frame.origin.x + (self.contentView.frame.size.width - _size.width)/2;
+        rect.size.width = _size.width;
+        rect.origin.y = self.contentView.frame.origin.y - _size.height +1;
+        rect.size.height = _size.height;
         
         // create button
         self.gripButton = [[UIButton alloc]initWithFrame:rect];
@@ -211,6 +211,7 @@
 - (void)dealloc
 {
     [self.gripButton release];
+    [self.text release];
     [super dealloc];
 }
 
