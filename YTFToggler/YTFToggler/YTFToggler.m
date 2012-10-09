@@ -76,7 +76,7 @@
         // and rotate it - frame below prepared for rotation
         self.gripButton.transform = CGAffineTransformMakeRotation(- M_PI / 2);
         
-    }else if(self.position == TogglerPositionTop){
+    }else if(self.position == TogglerPositionBottom){
         
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
@@ -88,7 +88,7 @@
         // create button
         self.gripButton = [[UIButton alloc]initWithFrame:rect];
 
-    }else if(self.position == TogglerPositionBottom){
+    }else if(self.position == TogglerPositionTop){
         
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
@@ -129,15 +129,13 @@
 
 -(void)open{
     
-    
-    
     // relocate contentview  frame
     CGRect frame = self.contentView.frame;
     switch (self.position) {
         case TogglerPositionLeft: frame.size.width += _contentViewRect.size.width; break;
         case TogglerPositionRight: frame.size.width += _contentViewRect.size.width; break;
-        case TogglerPositionTop: frame.size.height += _contentViewRect.size.height; break;
         case TogglerPositionBottom: frame.size.height += _contentViewRect.size.height; break;
+        case TogglerPositionTop: frame.size.height += _contentViewRect.size.height; break;
     }
     self.contentView.frame = frame;
     
@@ -148,10 +146,16 @@
     switch (self.position) {
         case TogglerPositionLeft: frame.origin.x -= _contentViewRect.size.width; break;
         case TogglerPositionRight: frame.origin.x += _contentViewRect.size.width; break;
-        case TogglerPositionTop: frame.origin.y += _contentViewRect.size.height; break;
-        case TogglerPositionBottom: frame.origin.y -= _contentViewRect.size.height; break;
+        case TogglerPositionBottom: frame.origin.y += _contentViewRect.size.height; break;
+        case TogglerPositionTop: frame.origin.y -= _contentViewRect.size.height; break;
     }
     self.gripButton.frame = frame;
+    
+    
+    // fire event
+    if([self.delegate respondsToSelector:@selector(didOpenToggler:)]){
+        [self.delegate performSelector:@selector(didOpenToggler:) withObject:self];
+    }
 }
 
 -(void)close{
@@ -162,8 +166,8 @@
     switch (self.position) {
         case TogglerPositionLeft: frame.size.width = 0; break;
         case TogglerPositionRight: frame.size.width = 0; break;
-        case TogglerPositionTop: frame.size.height = 0; break;
         case TogglerPositionBottom: frame.size.height = 0; break;
+        case TogglerPositionTop: frame.size.height = 0; break;
     }
     self.contentView.frame = frame;
     
@@ -172,10 +176,15 @@
     switch (self.position) {
         case TogglerPositionLeft: frame.origin.x += _contentViewRect.size.width; break;
         case TogglerPositionRight: frame.origin.x -= _contentViewRect.size.width; break;
-        case TogglerPositionTop: frame.origin.y -= _contentViewRect.size.height; break;
-        case TogglerPositionBottom: frame.origin.y += _contentViewRect.size.height; break;
+        case TogglerPositionBottom: frame.origin.y -= _contentViewRect.size.height; break;
+        case TogglerPositionTop: frame.origin.y += _contentViewRect.size.height; break;
     }
     self.gripButton.frame = frame;
+    
+    // fire event
+    if([self.delegate respondsToSelector:@selector(didCloseToggler:)]){
+        [self.delegate performSelector:@selector(didCloseToggler:) withObject:self];
+    }
 }
 
 -(void) toggle{

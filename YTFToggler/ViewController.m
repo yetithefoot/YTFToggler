@@ -33,10 +33,24 @@
     self.view3.layer.borderColor = [UIColor whiteColor].CGColor;
     self.view4.layer.borderColor = [UIColor blackColor].CGColor;
     
-    _toggler1 = [[YTFToggler alloc] initWithView:self.view1 andPosition:TogglerPositionTop andText:@"Top"];
+    _toggler1 = [[YTFToggler alloc] initWithView:self.view1 andPosition:TogglerPositionBottom andText:@"Bottom"];
     _toggler2 = [[YTFToggler alloc] initWithView:self.view2 andPosition:TogglerPositionLeft andText:@"Left"];
     _toggler3 = [[YTFToggler alloc] initWithView:self.view3 andPosition:TogglerPositionRight andText:@"Right"];
-    _toggler4 = [[YTFToggler alloc] initWithView:self.view4 andPosition:TogglerPositionBottom andText:@"Bottom"];
+    _toggler4 = [[YTFToggler alloc] initWithView:self.view4 andPosition:TogglerPositionTop andText:@"Top"];
+    _toggler4.delegate = self;
+    
+}
+
+-(void)didOpenToggler:(YTFToggler *)toggler{
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Toggler did open" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+-(void)didCloseToggler:(YTFToggler *)toggler{
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Toggler did close" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
 
 

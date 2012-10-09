@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YTFToggler.h"
 
-@interface ViewController : UIViewController{
+@interface ViewController : UIViewController<YTFTogglerDelegate>{
     YTFToggler * _toggler1;
     YTFToggler * _toggler2;
     YTFToggler * _toggler3;

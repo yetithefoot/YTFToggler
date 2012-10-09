@@ -15,6 +15,22 @@ enum TogglerPosition {
     TogglerPositionBottom
 };
 
+enum TogglerState {
+    TogglerHidden = 0,
+    TogglerVisible
+};
+
+@class YTFToggler;
+
+@protocol YTFTogglerDelegate <NSObject>
+
+@optional
+
+-(void) didOpenToggler:(YTFToggler *) toggler;
+-(void) didCloseToggler:(YTFToggler *) toggler;
+
+@end
+
 
 @interface YTFToggler : UIViewController{
     CGRect _contentViewRect;
@@ -24,6 +40,7 @@ enum TogglerPosition {
 @property (retain, nonatomic) UIView * contentView;
 @property (retain, nonatomic) NSString * text;
 @property (assign, nonatomic) int position;
+@property (assign, nonatomic) id<YTFTogglerDelegate> delegate;
 
 
 -(void) open;
