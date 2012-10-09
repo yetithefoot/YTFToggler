@@ -33,10 +33,10 @@
     self.view3.layer.borderColor = [UIColor whiteColor].CGColor;
     self.view4.layer.borderColor = [UIColor blackColor].CGColor;
     
-    [[YTFToggler alloc] initWithView:self.view1 andPosition:TogglerPositionTop andText:@"Top"];
-    [[YTFToggler alloc] initWithView:self.view2 andPosition:TogglerPositionLeft andText:@"Left"];
-    [[YTFToggler alloc] initWithView:self.view3 andPosition:TogglerPositionRight andText:@"Right"];
-    [[YTFToggler alloc] initWithView:self.view4 andPosition:TogglerPositionBottom andText:@"Bottom"];
+    _toggler1 = [[YTFToggler alloc] initWithView:self.view1 andPosition:TogglerPositionTop andText:@"Top"];
+    _toggler2 = [[YTFToggler alloc] initWithView:self.view2 andPosition:TogglerPositionLeft andText:@"Left"];
+    _toggler3 = [[YTFToggler alloc] initWithView:self.view3 andPosition:TogglerPositionRight andText:@"Right"];
+    _toggler4 = [[YTFToggler alloc] initWithView:self.view4 andPosition:TogglerPositionBottom andText:@"Bottom"];
 }
 
 
@@ -55,4 +55,25 @@
     [self setView4:nil];
     [super viewDidUnload];
 }
+
+- (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender forEvent:(UIEvent *)event {
+    
+
+    switch (sender.tag) {
+        case 1:
+            (sender.selectedSegmentIndex ==0)?[_toggler1 show]:[_toggler1 hide];
+            break;
+        case 2:
+            (sender.selectedSegmentIndex ==0)?[_toggler2 show]:[_toggler2 hide];
+            break;
+        case 3:
+            (sender.selectedSegmentIndex ==0)?[_toggler3 show]:[_toggler3 hide];
+            break;
+        case 4:
+            (sender.selectedSegmentIndex ==0)?[_toggler4 show]:[_toggler4 hide];
+            break;
+    }
+    
+}
+
 @end

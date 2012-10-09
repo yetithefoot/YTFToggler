@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface YTFToggler ()
-    @property(retain, nonatomic) UIButton * gripButton;
+
 @end
 
 
@@ -24,6 +24,7 @@
         // Initialization code
         
         self.contentView = aView;
+        _contentViewRect = aView.frame;
         self.position = position;
         self.text = text;
         
@@ -33,11 +34,18 @@
     return self;
 }
 
+
+
+
+
 #define BTN_SHORT 20
 #define BTN_LONG 80
 
 - (void)customInit
 {
+    
+
+    
     // we need to create 4 different modes to this toggler
     
     if(self.position == TogglerPositionLeft){
@@ -109,48 +117,86 @@
     [self.gripButton.layer setBorderWidth:self.contentView.layer.borderWidth];
     
     // add handler to handle pat geatures
-    [self.gripButton addTarget:self action:@selector(toggleView) forControlEvents:UIControlEventTouchUpInside];
+    [self.gripButton addTarget:self action:@selector(toggle) forControlEvents:UIControlEventTouchUpInside];
     
     // add to superview of view, to avoid button hiding when main view is hided + handle user interactions outside of bounds
     [self.contentView.superview insertSubview:self.gripButton belowSubview:self.contentView];
 
+
 }
 
--(void) toggleView{
-    if(self.contentView.hidden){
-        self.contentView.hidden = NO;
-        
-        // relocate toggler frame
-        CGRect frame = self.gripButton.frame;
-        
-        switch (self.position) {
-            case TogglerPositionLeft: frame.origin.x -= self.contentView.frame.size.width; break;
-            case TogglerPositionRight: frame.origin.x += self.contentView.frame.size.width; break;
-            case TogglerPositionTop: frame.origin.y += self.contentView.frame.size.height; break;
-            case TogglerPositionBottom: frame.origin.y -= self.contentView.frame.size.height; break;
-        }
-        
-        self.gripButton.frame = frame;
 
-        
+
+-(void)open{
+    
+    
+    
+    // relocate contentview  frame
+    CGRect frame = self.contentView.frame;
+    switch (self.position) {
+        case TogglerPositionLeft: frame.size.width += _contentViewRect.size.width; break;
+        case TogglerPositionRight: frame.size.width += _contentViewRect.size.width; break;
+        case TogglerPositionTop: frame.size.height += _contentViewRect.size.height; break;
+        case TogglerPositionBottom: frame.size.height += _contentViewRect.size.height; break;
+    }
+    self.contentView.frame = frame;
+    
+    
+    
+    // relocate toggler frame
+    frame = self.gripButton.frame;
+    switch (self.position) {
+        case TogglerPositionLeft: frame.origin.x -= _contentViewRect.size.width; break;
+        case TogglerPositionRight: frame.origin.x += _contentViewRect.size.width; break;
+        case TogglerPositionTop: frame.origin.y += _contentViewRect.size.height; break;
+        case TogglerPositionBottom: frame.origin.y -= _contentViewRect.size.height; break;
+    }
+    self.gripButton.frame = frame;
+}
+
+-(void)close{
+
+    
+    // relocate contentview  frame
+    CGRect frame = self.contentView.frame;
+    switch (self.position) {
+        case TogglerPositionLeft: frame.size.width = 0; break;
+        case TogglerPositionRight: frame.size.width = 0; break;
+        case TogglerPositionTop: frame.size.height = 0; break;
+        case TogglerPositionBottom: frame.size.height = 0; break;
+    }
+    self.contentView.frame = frame;
+    
+    // relocate toggler frame
+    frame = self.gripButton.frame;
+    switch (self.position) {
+        case TogglerPositionLeft: frame.origin.x += _contentViewRect.size.width; break;
+        case TogglerPositionRight: frame.origin.x -= _contentViewRect.size.width; break;
+        case TogglerPositionTop: frame.origin.y -= _contentViewRect.size.height; break;
+        case TogglerPositionBottom: frame.origin.y += _contentViewRect.size.height; break;
+    }
+    self.gripButton.frame = frame;
+}
+
+-(void) toggle{
+    if(self.contentView.frame.size.width == 0 || self.contentView.frame.size.height == 0){
+        [self open];
     }else{
-        self.contentView.hidden = YES;
-        
-        
-        // relocate toggler frame
-        CGRect frame = self.gripButton.frame;
-        
-        switch (self.position) {
-            case TogglerPositionLeft: frame.origin.x += self.contentView.frame.size.width; break;
-            case TogglerPositionRight: frame.origin.x -= self.contentView.frame.size.width; break;
-            case TogglerPositionTop: frame.origin.y -= self.contentView.frame.size.height; break;
-            case TogglerPositionBottom: frame.origin.y += self.contentView.frame.size.height; break;
-        }
-        
-        self.gripButton.frame = frame;
-        
+        [self close];
     }
 }
+
+
+-(void) show{
+    self.contentView.hidden = NO;
+    self.gripButton.hidden = NO;
+}
+
+-(void) hide{
+    self.contentView.hidden = YES;
+    self.gripButton.hidden = YES;
+}
+
 
 - (void)dealloc
 {

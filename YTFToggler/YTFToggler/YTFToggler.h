@@ -16,11 +16,22 @@ enum TogglerPosition {
 };
 
 
-@interface YTFToggler : UIViewController
+@interface YTFToggler : UIViewController{
+    CGRect _contentViewRect;
+}
 
+@property(retain, nonatomic) UIButton * gripButton;
 @property (retain, nonatomic) UIView * contentView;
 @property (retain, nonatomic) NSString * text;
 @property (assign, nonatomic) int position;
+
+
+-(void) open;
+-(void) close;
+-(void) toggle;
+
+-(void) show;
+-(void) hide;
 
 - (id)initWithView:(UIView *) aView andPosition:(int)position andText:(NSString *)text;
 
