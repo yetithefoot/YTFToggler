@@ -44,15 +44,13 @@
 - (void)customInit
 {
     
-
-    
     // we need to create 4 different modes to this toggler
     
     if(self.position == TogglerPositionLeft){
     
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
-        rect.origin.x = self.contentView.frame.origin.x - BTN_LONG/2 - BTN_SHORT/2;
+        rect.origin.x = self.contentView.frame.origin.x - BTN_LONG/2 - BTN_SHORT/2 +1;
         rect.size.width = BTN_LONG;
         rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height/2 - BTN_SHORT/2;
         rect.size.height = BTN_SHORT;
@@ -66,7 +64,7 @@
         
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
-        rect.origin.x = self.contentView.frame.size.width - BTN_LONG/2 + BTN_SHORT/2;
+        rect.origin.x = self.contentView.frame.size.width - BTN_LONG/2 + BTN_SHORT/2 -1;
         rect.size.width = BTN_LONG;
         rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height/2 - BTN_SHORT/2;
         rect.size.height = BTN_SHORT;
@@ -82,7 +80,7 @@
         CGRect rect = self.contentView.frame;
         rect.origin.x = self.contentView.frame.origin.x + (self.contentView.frame.size.width - BTN_LONG)/2;
         rect.size.width = BTN_LONG;
-        rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height;
+        rect.origin.y = self.contentView.frame.origin.y + self.contentView.frame.size.height-1;
         rect.size.height = BTN_SHORT;
         
         // create button
@@ -94,7 +92,7 @@
         CGRect rect = self.contentView.frame;
         rect.origin.x = self.contentView.frame.origin.x + (self.contentView.frame.size.width - BTN_LONG)/2;
         rect.size.width = BTN_LONG;
-        rect.origin.y = self.contentView.frame.origin.y - BTN_SHORT;
+        rect.origin.y = self.contentView.frame.origin.y - BTN_SHORT +1;
         rect.size.height = BTN_SHORT;
         
         // create button
