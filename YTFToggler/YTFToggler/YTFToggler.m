@@ -47,7 +47,7 @@
     // we need to create 4 different modes to this toggler
     
     if(self.position == TogglerPositionLeft){
-    
+        
         // make frame prepared for rotation
         CGRect rect = self.contentView.frame;
         rect.origin.x = self.contentView.frame.origin.x - _size.width/2 - _size.height/2 +1;
@@ -85,7 +85,7 @@
         
         // create button
         self.gripButton = [[UIButton alloc]initWithFrame:rect];
-
+        
     }else if(self.position == TogglerPositionTop){
         
         // make frame prepared for rotation
@@ -99,9 +99,9 @@
         self.gripButton = [[UIButton alloc]initWithFrame:rect];
         
     }
-
-
-
+    
+    
+    
     // tune colors and visuals
     self.gripButton.backgroundColor = self.contentView.backgroundColor;
     [self.gripButton setTitle:self.text forState:UIControlStateNormal];
@@ -119,8 +119,8 @@
     
     // add to superview of view, to avoid button hiding when main view is hided + handle user interactions outside of bounds
     [self.contentView.superview insertSubview:self.gripButton belowSubview:self.contentView];
-
-
+    
+    
 }
 
 
@@ -128,7 +128,16 @@
     return _originalContentViewRect;
 }
 
+-(BOOL)isOpen{
+    return (self.contentView.frame.size.width != 0 && self.contentView.frame.size.height != 0);
+}
+
 -(void)open{
+    
+    // if already open - return
+    if(self.contentView.frame.size.width != 0 && self.contentView.frame.size.height != 0){
+        return;
+    }
     
     // relocate contentview  frame
     CGRect frame = self.contentView.frame;
@@ -160,12 +169,15 @@
 }
 
 -(void)close{
-
+    
+    // if already close - return
+    if(self.contentView.frame.size.width == 0 || self.contentView.frame.size.height == 0) return;
+    
     
     // relocate contentview  frame
     CGRect frame = self.contentView.frame;
     switch (self.position) {
-        case TogglerPositionLeft: frame.size.width = 0; break;
+        case TogglerPositionLeft: frame.size.width = 0;  break;
         case TogglerPositionRight: frame.size.width = 0; break;
         case TogglerPositionBottom: frame.size.height = 0; break;
         case TogglerPositionTop: frame.size.height = 0; break;
@@ -205,6 +217,10 @@
 -(void) hide{
     self.contentView.hidden = YES;
     self.gripButton.hidden = YES;
+}
+
+-(BOOL)isHidden{
+    return (self.contentView.hidden == YES && self.gripButton.hidden == YES);
 }
 
 

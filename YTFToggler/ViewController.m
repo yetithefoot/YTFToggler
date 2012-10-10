@@ -60,6 +60,7 @@
     [_view2 release];
     [_view3 release];
     [_view4 release];
+
     [super dealloc];
 }
 - (void)viewDidUnload {
@@ -88,6 +89,14 @@
             break;
     }
     
+}
+
+- (IBAction)btnOpen4Click:(id)sender {
+    [_toggler4 open];
+}
+
+- (IBAction)btnClose4Click:(id)sender {
+    [_toggler4 close];
 }
 
 @end

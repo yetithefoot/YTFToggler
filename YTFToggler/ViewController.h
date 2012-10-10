@@ -23,5 +23,7 @@
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender forEvent:(UIEvent *)event;
 
+- (IBAction)btnOpen4Click:(id)sender;
+- (IBAction)btnClose4Click:(id)sender;
 
 @end

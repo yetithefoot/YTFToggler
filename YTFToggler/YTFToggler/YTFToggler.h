@@ -44,6 +44,8 @@ enum TogglerState {
 @property (assign, nonatomic) int position;
 @property (assign, nonatomic) id<YTFTogglerDelegate> delegate;
 @property (readonly) CGRect originalRect;
+@property (readonly) BOOL isOpen;
+@property (readonly) BOOL isHidden;
 
 
 -(void) open;
